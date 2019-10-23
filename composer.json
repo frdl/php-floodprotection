@@ -1,0 +1,13 @@
+{
+  "name" : "frd/php-floodprotection",
+  "type" : "library",
+  "license": ["MIT"],	  
+  "require" : {
+	    "php": ">=7.2"
+  },	  
+  "autoload": {
+        "psr-4": {
+            "frdl\\security\\floodprotection": "src/frdl/security/floodprotection/"
+        }
+  }  
+}
