@@ -1,5 +1,5 @@
 {
-  "name" : "frd/php-floodprotection",
+  "name" : "frdl/php-floodprotection",
   "type" : "library",
   "license": ["MIT"],	  
   "require" : {
