@@ -1,5 +1,6 @@
 {
   "name" : "frdl/php-floodprotection",
+  "description" : "Simple IP Flood Protection",	
   "type" : "library",
   "license": ["MIT"],	  
   "require" : {
