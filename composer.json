@@ -7,7 +7,7 @@
   },	  
   "autoload": {
         "psr-4": {
-            "frdl\\security\\floodprotection": "src/frdl/security/floodprotection/"
+            "frdl\\security\\floodprotection": "src/php-floodprotection/frdl/security/floodprotection/"
         }
   }  
 }
