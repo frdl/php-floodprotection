@@ -48,9 +48,10 @@ class FloodProtection
     if(fseek($fp, -4 * $this->limit, \SEEK_END) === -1) {
         return false;
     }
-    $time = reset(unpack('L', fread($fp, 4)));
+    $a = unpack('L', fread($fp, 4));	 
+    $time = reset($a);
     fclose($fp);
-    if(time() - $time < $this->duration) {
+    if(time() - intval($time) < $this->duration) {
         if($this->autoclean){
             $this->prune();
         }
