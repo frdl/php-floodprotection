@@ -22,7 +22,7 @@ class FloodProtection
 	
  public function __construct($name = '', $limit = 10, $duration = 30, $dir = null, $autoclean = true){
 	 if(null === $dir){
-		 $dir = $this->getCacheDir('FP');
+		 $dir = $this->getCacheDir('frdl-floodprotection');
 	 }
 	 $this->dir = $dir;
 	 $this->name = $name;
@@ -72,7 +72,7 @@ class FloodProtection
   }
 	
 	
- public function getCacheDir($name = 'FP'){
+ public function getCacheDir($name = 'frdl-floodprotection'){
 	    $name = strtoupper($name);
 	 
 		  $_ENV['FRDL_HPS_CACHE_DIR'] = ((isset($_ENV['FRDL_HPS_CACHE_DIR'])) ? $_ENV['FRDL_HPS_CACHE_DIR'] 
@@ -86,10 +86,14 @@ class FloodProtection
  
 		 
 		  
-          $_ENV['FRDL_HPS_FP_CACHE_DIR'] = ((isset($_ENV['FRDL_HPS_FP_CACHE_DIR'])) ? $_ENV['FRDL_HPS_FP_CACHE_DIR'] 
-                   : $_ENV['FRDL_HPS_CACHE_DIR']. 'floodprotection'. \DIRECTORY_SEPARATOR
-					  );	 
-		 
+ 
+	 
+	 if(!empty($name)){		 
+        $_ENV['FRDL_HPS_'.$name.'_CACHE_DIR'] = ((isset($_ENV['FRDL_HPS_'.$name.'_CACHE_DIR'])) ? $_ENV['FRDL_HPS_'.$name.'_CACHE_DIR'] 
+                   : rtrim($_ENV['FRDL_HPS_CACHE_DIR'],'\\/'). \DIRECTORY_SEPARATOR.$name. \DIRECTORY_SEPARATOR
+					  );			
+	 }
+	 
 	 return (empty($name)) ? $_ENV['FRDL_HPS_CACHE_DIR'] : $_ENV['FRDL_HPS_'.$name.'_CACHE_DIR'];
    }
 	
