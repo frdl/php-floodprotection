@@ -12,3 +12,8 @@ use frdl\security\floodprotection\FloodProtection;
     exit("Hit some *");
  }
 ````
+
+# Bug notice:
+Please note  [this bug](https://github.com/frdl/php-floodprotection/issues/1)!
+
+
